@@ -87,3 +87,8 @@ tags, get the links to the tags I find on the pinboard website itself, and
 manage tags in a way conducive to how I work. I may also be able to build up
 some views on how I interact with tags, as well as custom views of the heirarchy
 of my tags and tagging system.
+
+## First Steps
+
+* [ ] quick and dirty interface for talking to any relevant pinboard api
+  functions.
