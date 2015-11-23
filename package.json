@@ -1,0 +1,24 @@
+{
+  "name": "pinboard-tag-editor",
+  "version": "1.0.0",
+  "description": "So, [pinboard](https://pinboard.in) is a thing. It's an awesome thing, and since I started using it I've gone back and hunted down links that otherwise would have been lost forever.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "fetch": "^0.3.6",
+    "fuzzy": "^0.1.1",
+    "node-fetch": "^1.3.3",
+    "ramda": "^0.18.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir build"
+  },
+  "author": "Sam Marshall",
+  "license": "MIT"
+}
