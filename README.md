@@ -56,6 +56,16 @@ I'd love a UI interface for changing that `electronics` into
 `concept:electronics` - or visa versa. There is an API endpoint for doing just
 this, but no way of handling it via the pinboard website.
 
+### Additive filters
+
+Another thing that I would find hugely useful is additive filters. For example,
+if I needed to find a functional programming language I remember reading about,
+I could apply both the filter 'lang' and 'prog:functional' and I'd find an
+intersection of links there. This may be for later, as it contradicts what I say
+below about not caring about seeing the articles associated. Since it relies on
+fuzzy search of tags, I can't just fob this action off on the current pinboard
+site. Perhaps if everything else goes well?
+
 
 ### Things I don't want to lose
 
