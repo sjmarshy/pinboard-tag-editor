@@ -121,5 +121,6 @@ module.exports = {
   renameTag,
   cantReceiveTags,
 
-  doFetchTags
+  doFetchTags,
+  doRenameTags
 };

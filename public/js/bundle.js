@@ -14110,7 +14110,8 @@ module.exports = {
   renameTag: renameTag,
   cantReceiveTags: cantReceiveTags,
 
-  doFetchTags: doFetchTags
+  doFetchTags: doFetchTags,
+  doRenameTags: doRenameTags
 };
 
 },{"node-fetch":88}],56:[function(require,module,exports){
