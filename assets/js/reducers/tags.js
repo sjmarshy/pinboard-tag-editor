@@ -19,10 +19,7 @@ module.exports = (state=fromJS({ tagList: fromJS({}), loadingTags: false, error:
 
     return state.set("loadingTags", false).set(
         "tagList",
-        action.tags.reduce((tagList, newTag) => {
-
-          return tagList.set(newTag.tag, newTag);
-        }, state.get("tagList")));
+        fromJS(action.tags));
   case RENAME_TAG:
   case CANT_RECEIVE_TAGS:
   case RENAME_TAG_SUCCESS:

@@ -94,8 +94,10 @@ function doFetchTags() {
 
     dispatch(getTags());
 
-    return fetch("/tags").then((response) => {
+    let url = `${window.location.origin}/tags`;
+    return fetch(url).then((response) => {
 
+      console.log(response);
       return response.json();
     }).then((tags) => {
 

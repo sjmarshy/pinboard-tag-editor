@@ -14083,8 +14083,10 @@ function doFetchTags() {
 
     dispatch(getTags());
 
-    return fetch("/tags").then(function (response) {
+    var url = window.location.origin + "/tags";
+    return fetch(url).then(function (response) {
 
+      console.log(response);
       return response.json();
     }).then(function (tags) {
 
@@ -14199,10 +14201,7 @@ module.exports = function () {
       return state.set("loadingTags", true);
     case RECEIVE_TAGS:
 
-      return state.set("loadingTags", false).set("tagList", action.tags.reduce(function (tagList, newTag) {
-
-        return tagList.set(newTag.tag, newTag);
-      }, state.get("tagList")));
+      return state.set("loadingTags", false).set("tagList", fromJS(action.tags));
     case RENAME_TAG:
     case CANT_RECEIVE_TAGS:
     case RENAME_TAG_SUCCESS:
