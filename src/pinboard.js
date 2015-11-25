@@ -33,7 +33,7 @@ function createGetTags(authToken) {
     return fetch(url).then((res) => {
 
       return res.json();
-    });
+    }).catch((e) => console.log(e));
   };
 }
 

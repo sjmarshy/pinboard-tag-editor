@@ -5,4 +5,12 @@
   @include align-items(flex-start);
   @include flex-wrap(wrap);
 
+  padding: 0 24px 0 24px;
+
+  > .tag {
+
+    padding: 0 24px 12px 0;
+    margin: 0;
+    color: grey;
+  }
 }
