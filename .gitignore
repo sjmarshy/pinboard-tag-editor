@@ -1,3 +1,5 @@
 .*.swp
 node_modules/
 build
+.sass-cache
+public/css

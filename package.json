@@ -35,8 +35,10 @@
     "build:watch": "npm run build:be:watch & npm run build:fe:watch",
     "build:be": "babel src --out-dir build",
     "build:be:watch": "babel --watch src --out-dir build",
-    "build:fe": "browserify -t babelify assets/js/app.js -o public/js/bundle.js",
-    "build:fe:watch": "watchify -t babelify assets/js/app.js -o public/js/bundle.js"
+    "build:fe": "browserify -t babelify assets/js/app.js -o public/js/bundle.js && npm run build:scss",
+    "build:fe:watch": "watchify -t babelify assets/js/app.js-o public/js/bundle.js & npm run build:scss:watch",
+    "build:scss": "node-sass assets/scss/index.scss > public/css/index.css",
+    "build:scss:watch": "node-sass --watch assets/scss/index.scss --output public/css"
   },
   "author": "Sam Marshall",
   "license": "MIT"
