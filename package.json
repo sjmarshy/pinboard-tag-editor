@@ -14,6 +14,7 @@
     "immutable": "^3.7.5",
     "jsnox": "^2.1.1",
     "node-fetch": "^1.3.3",
+    "open": "0.0.5",
     "ramda": "^0.18.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -35,10 +36,10 @@
     "build:watch": "npm run build:be:watch & npm run build:fe:watch",
     "build:be": "babel src --out-dir build",
     "build:be:watch": "babel --watch src --out-dir build",
-    "build:fe": "browserify -t babelify assets/js/app.js -o public/js/bundle.js && npm run build:scss",
-    "build:fe:watch": "watchify -t babelify assets/js/app.js-o public/js/bundle.js & npm run build:scss:watch",
-    "build:scss": "node-sass assets/scss/index.scss > public/css/index.css",
-    "build:scss:watch": "node-sass --watch assets/scss/index.scss --output public/css"
+    "build:fe": "babel assets/js --out-dir public/js && npm run build.scss",
+    "build:fe:watch": "babel --watch assets/js --out-dir public/js && npm run build:scss:watch",
+    "build:scss": "node-sass --include-path assets/scss assets/scss/index.scss > public/css/index.css",
+    "build:scss:watch": "watch 'npm run build:scss' assets/scss/"
   },
   "author": "Sam Marshall",
   "license": "MIT"

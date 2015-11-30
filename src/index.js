@@ -23,7 +23,7 @@ function init(e) {
     throw new Error("please set PTM_AUTH_TOKEN to the value of your pinboard token");
   }
 
-  createRoutes(expressApp, pinboard(PTM_AUTH_TOKEN));
+  createRoutes(expressApp, pinboard(PTM_AUTH_TOKEN), PTM_AUTH_TOKEN);
 
   app.on("ready", () => {
 

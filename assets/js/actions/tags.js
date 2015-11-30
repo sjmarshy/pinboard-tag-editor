@@ -14,7 +14,20 @@ const CANT_RECEIVE_TAGS = "CANT_RECEIVE_TAGS";
 const RENAME_TAG = "RENAME_TAG";
 const RENAME_TAG_SUCCESS = "RENAME_TAG_SUCCESS";
 const CANT_RENAME_TAG = "CANT_RENAME_TAG";
+const ADD_FILTER = "ADD_FILTER";
+const REMOVE_FILTER = "REMOVE_FILTER";
+const REPLACE_FILTER = "REPLACE_FILTER";
+const CLEAR_FILTERS = "CLEAR_FILTERS";
 
+function replaceFilter(oldFilter, newFilter) {
+
+  return {
+
+    type: REPLACE_FILTER,
+    oldFilter,
+    newFilter
+  };
+}
 
 function getTags() {
 
@@ -22,6 +35,32 @@ function getTags() {
   return {
 
     type: GET_TAGS
+  };
+}
+
+function addFilter(filter) {
+
+  return {
+
+    type: ADD_FILTER,
+    filter
+  };
+}
+
+function removeFilter(filter) {
+
+  return {
+
+    type: REMOVE_FILTER,
+    filter
+  };
+}
+
+function clearFilters() {
+
+  return {
+
+    type: CLEAR_FILTERS
   };
 }
 
@@ -39,7 +78,7 @@ function renameTag() {
 
   return {
 
-    type: RENAME_TAG,
+    type: RENAME_TAG
   };
 }
 
@@ -78,13 +117,13 @@ function doRenameTags(oldName, newName) {
 
     return fetch("/tags/rename",
         { method: "POST", body: `newName=${newName}&oldName=${oldName}` }).then(
-            (response) => {
+          () => {
 
-          return dispatch(renameTagSuccess(oldName, newName));
-        }).catch((error) => {
+            return dispatch(renameTagSuccess(oldName, newName));
+          }).catch((error) => {
 
-          return dispatch(cantRenameTag(error));
-        });
+            return dispatch(cantRenameTag(error));
+          });
   };
 }
 
@@ -97,7 +136,6 @@ function doFetchTags() {
     let url = `${window.location.origin}/tags`;
     return fetch(url).then((response) => {
 
-      console.log(response);
       return response.json();
     }).then((tags) => {
 
@@ -117,11 +155,19 @@ module.exports = {
   CANT_RECEIVE_TAGS,
   RENAME_TAG_SUCCESS,
   CANT_RENAME_TAG,
+  ADD_FILTER,
+  REMOVE_FILTER,
+  CLEAR_FILTERS,
+  REPLACE_FILTER,
 
   getTags,
   receiveTags,
   renameTag,
   cantReceiveTags,
+  addFilter,
+  removeFilter,
+  clearFilters,
+  replaceFilter,
 
   doFetchTags,
   doRenameTags

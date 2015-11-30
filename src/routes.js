@@ -1,4 +1,4 @@
-module.exports = (app, pinboard) => {
+module.exports = (app, pinboard, authToken) => {
 
   app.get("/tags", (req, res) => {
 
@@ -6,5 +6,10 @@ module.exports = (app, pinboard) => {
 
       return res.send(tags);
     });
+  });
+
+  app.get("/user", (req, res) => {
+
+    return res.send({ username: authToken.split(":")[0] });
   });
 };
