@@ -66,6 +66,11 @@ below about not caring about seeing the articles associated. Since it relies on
 fuzzy search of tags, I can't just fob this action off on the current pinboard
 site. Perhaps if everything else goes well?
 
+### Tagging posts
+
+it'd be great if my fuzzy search could cover adding tags to posts -this thing is
+going to end up being a full client, I can feel it.
+
 
 ### Things I don't want to lose
 
