@@ -1,6 +1,6 @@
 {
   "name": "pinboard-tag-editor",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "So, [pinboard](https://pinboard.in) is a thing. It's an awesome thing, and since I started using it I've gone back and hunted down links that otherwise would have been lost forever.",
   "main": "index.js",
   "directories": {
