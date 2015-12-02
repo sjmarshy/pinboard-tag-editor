@@ -27,7 +27,9 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.1.18",
     "babelify": "^7.2.0",
-    "electron-prebuilt": "^0.35.1"
+    "electron-prebuilt": "^0.35.1",
+    "node-sass": "^3.4.2",
+    "watchify": "^3.6.1"
   },
   "scripts": {
     "start": "electron build/index.js",
@@ -36,8 +38,8 @@
     "build:watch": "npm run build:be:watch & npm run build:fe:watch",
     "build:be": "babel src --out-dir build",
     "build:be:watch": "babel --watch src --out-dir build",
-    "build:fe": "babel assets/js --out-dir public/js && npm run build.scss",
-    "build:fe:watch": "babel --watch assets/js --out-dir public/js && npm run build:scss:watch",
+    "build:fe": "browserify -t babelify assets/js/app.js -o public/js/bundle.js && npm run build:scss",
+    "build:fe:watch": "watchify -t babelify assets/js/app.js -o public/js/bundle.js & npm run build:scss:watch",
     "build:scss": "node-sass --include-path assets/scss assets/scss/index.scss > public/css/index.css",
     "build:scss:watch": "watch 'npm run build:scss' assets/scss/"
   },

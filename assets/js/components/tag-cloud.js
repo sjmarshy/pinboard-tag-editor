@@ -1,6 +1,7 @@
+/* globals erequire */
 const React = require("react");
 const d = require("jsnox")(React);
-const remote = require("remote");
+const shell = erequire("electron").shell;
 
 module.exports = React.createClass({
 
@@ -11,8 +12,11 @@ module.exports = React.createClass({
 
     return d("div.tag-cloud[data-component=tag-cloud]", {},
         tags.map(t => {
+
           return d("a.tag", {
-            onClick: () => remote.shell.openItem(`https://pinboard.in/u:${username}/t:${t}/`)
+
+            id: t,
+            onClick: () => shell.openExternal(`https://pinboard.in/u:${username}/t:${t}/`)
           }, d("p", {}, t));
         }));
   }
