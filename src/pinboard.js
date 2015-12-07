@@ -1,6 +1,7 @@
 "use strict";
 
 const fetch = require("node-fetch");
+const { log }  = require("./util.js");
 
 const GET_TAGS = "tags/get";
 const RENAME_TAGS = "tags/rename";
@@ -34,7 +35,7 @@ function createGetTags(authToken) {
     return fetch(url).then((res) => {
 
       return res.json();
-    }).catch((e) => console.log(e));
+    }).catch((e) => log(e));
   };
 }
 
@@ -57,7 +58,9 @@ function createGetBookmarks(authToken) {
 
     return fetch(makePinboardURL(GET_BOOKMARKS, authToken)).then(res => {
 
-      return res.json();
+      let rj = res.json();
+
+      return rj;
     });
   };
 }

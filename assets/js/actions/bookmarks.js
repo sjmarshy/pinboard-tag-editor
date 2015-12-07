@@ -70,7 +70,10 @@ function doFetchBookmarks() {
     let url = `${window.location.origin}/bookmarks`;
     return fetch(url).then(response => {
 
-      return dispatch(getBookmarksSuccess(response.json().bookmarks));
+
+      return response.json();
+    }).then(bs => {
+      return dispatch(getBookmarksSuccess(bs));
     }).catch(err => {
 
       return dispatch(getBookmarksFail(err.message));

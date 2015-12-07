@@ -2,6 +2,7 @@ const React = require("react");
 const d = require("jsnox")(React);
 const { doFetchTags } = require("../actions/tags.js");
 const { doFetchUsername } = require("../actions/ui.js");
+const { doFetchBookmarks } = require("../actions/bookmarks.js");
 const { connect } = require("react-redux");
 const FilterBox = require("../components/filter-box.js");
 
@@ -10,6 +11,7 @@ const App = React.createClass({
   componentWillMount() {
 
     this.props.dispatch(doFetchUsername());
+    this.props.dispatch(doFetchBookmarks());
     return this.props.dispatch(doFetchTags());
   },
 
