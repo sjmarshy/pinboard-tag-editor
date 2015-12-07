@@ -1,3 +1,4 @@
+/* globals window */
 // GET_TAGS - fetch tags from the be / pinboard UI
 // RECEIVE_TAGS - hydrate state with tags
 // RENAME_TAG - rename an old tag to a new name
@@ -11,9 +12,11 @@ const fetch = require("node-fetch");
 const GET_TAGS = "GET_TAGS";
 const RECEIVE_TAGS = "RECEIVE_TAGS";
 const CANT_RECEIVE_TAGS = "CANT_RECEIVE_TAGS";
+
 const RENAME_TAG = "RENAME_TAG";
 const RENAME_TAG_SUCCESS = "RENAME_TAG_SUCCESS";
 const CANT_RENAME_TAG = "CANT_RENAME_TAG";
+
 const ADD_FILTER = "ADD_FILTER";
 const REMOVE_FILTER = "REMOVE_FILTER";
 const REPLACE_FILTER = "REPLACE_FILTER";
