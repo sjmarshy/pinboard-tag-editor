@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 
 const GET_TAGS = "tags/get";
 const RENAME_TAGS = "tags/rename";
+const GET_BOOKMARKS = "posts/all";
 
 function makePinboardURL(path, authToken, furtherArgs) {
 
@@ -50,11 +51,23 @@ function createRenameTags(authToken) {
   };
 }
 
+function createGetBookmarks(authToken) {
+  
+  return () => {
+
+    return fetch(makePinboardURL(GET_BOOKMARKS, authToken)).then(res => {
+
+      return res.json();
+    });
+  };
+}
+
 module.exports = (authToken) => {
 
   return {
 
     getTags: createGetTags(authToken),
-    renameTags: createRenameTags(authToken)
+    renameTags: createRenameTags(authToken),
+    getBookmarks: createGetBookmarks(authToken)
   };
 };
