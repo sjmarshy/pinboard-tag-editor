@@ -1,4 +1,5 @@
-module.exports = (app, pinboard, authToken) => {
+
+export default (app, pinboard, authToken) => {
 
   app.get("/tags", (req, res) => {
 

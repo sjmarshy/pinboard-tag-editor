@@ -1,15 +1,15 @@
 /* globals window */
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-const GET_BOOKMARKS = "GET_BOOKMARKS";
-const GET_BOOKMARKS_SUCCESS = "GET_BOOKMARKS_SUCCESS";
-const GET_BOOKMARKS_FAIL = "GET_BOOKMARKS_FAIL";
+export const GET_BOOKMARKS = "GET_BOOKMARKS";
+export const GET_BOOKMARKS_SUCCESS = "GET_BOOKMARKS_SUCCESS";
+export const GET_BOOKMARKS_FAIL = "GET_BOOKMARKS_FAIL";
 
-const ADD_BOOKMARK_FILTER = "ADD_BOOKMARK_FILTER";
-const CLEAR_BOOKMARK_FILTERS = "CLEAR_BOOKMARK_FILTERS";
-const REMOVE_BOOKMARK_FILTER = "REMOVE_BOOKMARK_FILTER";
+export const ADD_BOOKMARK_FILTER = "ADD_BOOKMARK_FILTER";
+export const CLEAR_BOOKMARK_FILTERS = "CLEAR_BOOKMARK_FILTERS";
+export const REMOVE_BOOKMARK_FILTER = "REMOVE_BOOKMARK_FILTER";
 
-function getBookmarks() {
+export function getBookmarks() {
   
   return {
 
@@ -17,7 +17,7 @@ function getBookmarks() {
   };
 }
 
-function getBookmarksSuccess(bookmarks) {
+export function getBookmarksSuccess(bookmarks) {
   
   return {
     
@@ -26,7 +26,7 @@ function getBookmarksSuccess(bookmarks) {
   };
 }
 
-function getBookmarksFail(error) {
+export function getBookmarksFail(error) {
   
   return {
 
@@ -35,7 +35,7 @@ function getBookmarksFail(error) {
   };
 }
 
-function addBookmarkFilter(filter) {
+export function addBookmarkFilter(filter) {
 
   return {
 
@@ -44,7 +44,7 @@ function addBookmarkFilter(filter) {
   };
 }
 
-function clearBookmarkFilters() {
+export function clearBookmarkFilters() {
 
   return {
 
@@ -52,7 +52,7 @@ function clearBookmarkFilters() {
   };
 }
 
-function removeBookmarkFilter(filter) {
+export function removeBookmarkFilter(filter) {
   
   return {
 
@@ -61,7 +61,7 @@ function removeBookmarkFilter(filter) {
   };
 }
 
-function doFetchBookmarks() {
+export function doFetchBookmarks() {
 
   return dispatch => {
 
@@ -80,24 +80,3 @@ function doFetchBookmarks() {
     });
   };
 }
-
-module.exports = {
-
-  GET_BOOKMARKS,
-  GET_BOOKMARKS_SUCCESS,
-  GET_BOOKMARKS_FAIL,
-
-  ADD_BOOKMARK_FILTER,
-  CLEAR_BOOKMARK_FILTERS,
-  REMOVE_BOOKMARK_FILTER,
-
-  getBookmarks,
-  getBookmarksSuccess,
-  getBookmarksFail,
-
-  addBookmarkFilter,
-  clearBookmarkFilters,
-  removeBookmarkFilter,
-
-  doFetchBookmarks
-};

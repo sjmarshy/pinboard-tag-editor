@@ -1,12 +1,7 @@
-const { curry } = require("ramda");
-const { filter } = require("fuzzy");
+import { curry } from "ramda";
+import { filter } from "fuzzy";
 
-const searchTags = curry((tags, search) => {
+export const searchTags = curry((tags, search) => {
 
   return filter(search, tags);
 });
-
-module.exports = {
-
-  searchTags
-};

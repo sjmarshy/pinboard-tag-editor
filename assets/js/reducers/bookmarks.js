@@ -1,13 +1,13 @@
-const {
+import {
   GET_BOOKMARKS,
   GET_BOOKMARKS_FAIL,
   GET_BOOKMARKS_SUCCESS,
   ADD_BOOKMARK_FILTER,
   CLEAR_BOOKMARK_FILTERS,
   REMOVE_BOOKMARK_FILTER
-} = require("../actions/bookmarks.js");
+} from "../actions/bookmarks.js";
 
-const { fromJS } = require("immutable");
+import { fromJS } from "immutable";
 
 const defaultState = fromJS({
 
@@ -18,7 +18,7 @@ const defaultState = fromJS({
   error: ""
 });
 
-module.exports = (state = defaultState, action) => {
+export default (state = defaultState, action) => {
 
   switch(action.type) {
 

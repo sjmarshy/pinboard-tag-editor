@@ -1,6 +1,7 @@
-const { fromJS } = require("immutable");
-const { searchTags } = require("../../../src/tags.js");
-const {
+import fromJS from "immutable";
+import { searchTags } from "../../../src/tags.js";
+
+import {
   GET_TAGS,
   RECEIVE_TAGS,
   RENAME_TAG,
@@ -10,7 +11,7 @@ const {
   ADD_FILTER,
   REMOVE_FILTER,
   REPLACE_FILTER,
-  CLEAR_FILTERS } = require("../actions/tags.js");
+  CLEAR_FILTERS } from "../actions/tags.js";
 
 function filterTagList(filters, tagList) {
 
@@ -34,14 +35,16 @@ function applyFilteredTagList(s) {
   return s.update("filteredTagList", () => newTagList);
 }
 
-module.exports = (
-    state=fromJS({
-      tagList: fromJS({}),
-      filters: fromJS([]),
-      filteredTagList: fromJS({}),
-      loadingTags: false,
-      error: false }),
-    action) => {
+const defaultState = fromJS({
+
+  tagList: fromJS({}),
+  filters: fromJS([]),
+  filteredTagList: fromJS({}),
+  loadingTags: false,
+  error: false 
+});
+
+export default (state = defaultState, action) => {
 
   switch(action.type) {
 

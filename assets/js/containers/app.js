@@ -1,10 +1,12 @@
-const React = require("react");
-const d = require("jsnox")(React);
-const { doFetchTags } = require("../actions/tags.js");
-const { doFetchUsername } = require("../actions/ui.js");
-const { doFetchBookmarks } = require("../actions/bookmarks.js");
-const { connect } = require("react-redux");
-const FilterBox = require("../components/filter-box.js");
+import React from "react";
+import jsnox from "jsnox";
+import { doFetchTags } from "../actions/tags.js";
+import { doFetchUsername } from "../actions/ui.js";
+import { doFetchBookmarks } from "../actions/bookmarks.js";
+import { connect } from "react-redux";
+import FilterBox from "../components/filter-box.js";
+
+const d = jsnox(React);
 
 const App = React.createClass({
 
@@ -28,4 +30,4 @@ const App = React.createClass({
 });
 
 
-module.exports = connect(s => s)(App);
+export default connect(s => s)(App);

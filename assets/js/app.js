@@ -1,10 +1,11 @@
-const React = require("react");
-const { render } = require("react-dom");
-const { Router } = require("react-router");
-const { Provider } = require("react-redux");
+import React from "react";
+import { render } from "react-dom";
+import { Router } from "react-router";
+import { Provider } from "react-redux";
+import store from "./store.js";
+import routes from "./routes.js";
+
 const d = require("jsnox")(React);
-const store = require("./store.js");
-const routes = require("./routes.js");
 
 
 render(

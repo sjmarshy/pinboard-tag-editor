@@ -1,8 +1,10 @@
-const React = require("react");
-const d = require("jsnox")(React);
-const { replaceFilter } = require("../actions/tags.js");
+import React from "react";
+import jsnox from "jsnox";
+import { replaceFilter } from "../actions/tags.js";
 
-module.exports = React.createClass({
+const d = jsnox(React);
+
+export default React.createClass({
 
   getInitialState() {
 

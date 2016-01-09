@@ -1,19 +1,23 @@
-const { fromJS } = require("immutable");
-const {
+import { fromJS } from "immutable";
+import  {
   SWAP_PAGE_TITLE,
-  ADD_USERNAME } = require("../actions/ui.js");
+  ADD_USERNAME } from "../actions/ui.js";
 
-module.exports = (state = fromJS({
+const defaultState = fromJS({
 
   pageTitle: "Pinboard Tag Manager",
   username: ""
-}), action) => {
+});
+
+export default (state = defaultState, action) => {
 
   switch (action.type) {
   case ADD_USERNAME:
-
     return state.set("username", action.username);
+
   case SWAP_PAGE_TITLE:
+    return state.set("pageTitle", action.pageTitle);
+
   default:
     return state;
   }

@@ -1,28 +1,19 @@
 /* globals window */
-// GET_TAGS - fetch tags from the be / pinboard UI
-// RECEIVE_TAGS - hydrate state with tags
-// RENAME_TAG - rename an old tag to a new name
-//
-// getTags - action creator
-// receiveTags - action creator
-// renameTag - action creator
-// fetchTags - actually fetch tags from the server.
 
-const fetch = require("node-fetch");
-const GET_TAGS = "GET_TAGS";
-const RECEIVE_TAGS = "RECEIVE_TAGS";
-const CANT_RECEIVE_TAGS = "CANT_RECEIVE_TAGS";
+import fetch from "node-fetch";
 
-const RENAME_TAG = "RENAME_TAG";
-const RENAME_TAG_SUCCESS = "RENAME_TAG_SUCCESS";
-const CANT_RENAME_TAG = "CANT_RENAME_TAG";
+export const GET_TAGS = "GET_TAGS";
+export const RECEIVE_TAGS = "RECEIVE_TAGS";
+export const CANT_RECEIVE_TAGS = "CANT_RECEIVE_TAGS";
+export const RENAME_TAG = "RENAME_TAG";
+export const RENAME_TAG_SUCCESS = "RENAME_TAG_SUCCESS";
+export const CANT_RENAME_TAG = "CANT_RENAME_TAG";
+export const ADD_FILTER = "ADD_FILTER";
+export const REMOVE_FILTER = "REMOVE_FILTER";
+export const REPLACE_FILTER = "REPLACE_FILTER";
+export const CLEAR_FILTERS = "CLEAR_FILTERS";
 
-const ADD_FILTER = "ADD_FILTER";
-const REMOVE_FILTER = "REMOVE_FILTER";
-const REPLACE_FILTER = "REPLACE_FILTER";
-const CLEAR_FILTERS = "CLEAR_FILTERS";
-
-function replaceFilter(oldFilter, newFilter) {
+export function replaceFilter(oldFilter, newFilter) {
 
   return {
 
@@ -32,7 +23,7 @@ function replaceFilter(oldFilter, newFilter) {
   };
 }
 
-function getTags() {
+export function getTags() {
 
   // tags a'loadin
   return {
@@ -41,7 +32,7 @@ function getTags() {
   };
 }
 
-function addFilter(filter) {
+export function addFilter(filter) {
 
   return {
 
@@ -50,7 +41,7 @@ function addFilter(filter) {
   };
 }
 
-function removeFilter(filter) {
+export function removeFilter(filter) {
 
   return {
 
@@ -59,7 +50,7 @@ function removeFilter(filter) {
   };
 }
 
-function clearFilters() {
+export function clearFilters() {
 
   return {
 
@@ -67,7 +58,7 @@ function clearFilters() {
   };
 }
 
-function receiveTags(tags) {
+export function receiveTags(tags) {
 
   // tags a'done
   return {
@@ -77,7 +68,7 @@ function receiveTags(tags) {
   };
 }
 
-function renameTag() {
+export function renameTag() {
 
   return {
 
@@ -85,7 +76,7 @@ function renameTag() {
   };
 }
 
-function renameTagSuccess(oldName, newName) {
+export function renameTagSuccess(oldName, newName) {
 
   return {
     type: RENAME_TAG_SUCCESS,
@@ -94,7 +85,7 @@ function renameTagSuccess(oldName, newName) {
   };
 }
 
-function cantRenameTag(error) {
+export function cantRenameTag(error) {
 
   return {
 
@@ -103,7 +94,7 @@ function cantRenameTag(error) {
   };
 }
 
-function cantReceiveTags(error) {
+export function cantReceiveTags(error) {
 
   return {
 
@@ -112,7 +103,7 @@ function cantReceiveTags(error) {
   };
 }
 
-function doRenameTags(oldName, newName) {
+export function doRenameTags(oldName, newName) {
 
   return (dispatch) => {
 
@@ -130,7 +121,7 @@ function doRenameTags(oldName, newName) {
   };
 }
 
-function doFetchTags() {
+export function doFetchTags() {
 
   return (dispatch) => {
 
@@ -149,29 +140,3 @@ function doFetchTags() {
     });
   };
 }
-
-module.exports = {
-
-  GET_TAGS,
-  RECEIVE_TAGS,
-  RENAME_TAG,
-  CANT_RECEIVE_TAGS,
-  RENAME_TAG_SUCCESS,
-  CANT_RENAME_TAG,
-  ADD_FILTER,
-  REMOVE_FILTER,
-  CLEAR_FILTERS,
-  REPLACE_FILTER,
-
-  getTags,
-  receiveTags,
-  renameTag,
-  cantReceiveTags,
-  addFilter,
-  removeFilter,
-  clearFilters,
-  replaceFilter,
-
-  doFetchTags,
-  doRenameTags
-};

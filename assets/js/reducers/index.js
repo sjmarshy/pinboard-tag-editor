@@ -1,9 +1,9 @@
-const { combineReducers } = require("redux");
-const tags = require("./tags.js");
-const ui = require("./ui.js");
-const bookmarks = require("./bookmarks.js");
+import { combineReducers } from "redux";
+import tags from "./tags.js";
+import ui from "./ui.js";
+import bookmarks from "./bookmarks.js";
 
-module.exports = combineReducers({
+export default combineReducers({
   tags,
   ui,
   bookmarks

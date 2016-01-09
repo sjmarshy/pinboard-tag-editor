@@ -1,7 +1,7 @@
 "use strict";
 
-const fetch = require("node-fetch");
-const { log }  = require("./util.js");
+import fetch from "node-fetch";
+import { log } from "./util.js";
 
 const GET_TAGS = "tags/get";
 const RENAME_TAGS = "tags/rename";
@@ -65,7 +65,7 @@ function createGetBookmarks(authToken) {
   };
 }
 
-module.exports = (authToken) => {
+export default (authToken) => {
 
   return {
 

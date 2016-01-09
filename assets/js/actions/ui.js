@@ -1,7 +1,7 @@
-const SWAP_PAGE_TITLE = "SWAP_PAGE_TITLE";
-const ADD_USERNAME = "ADD_USERNAME";
+export const SWAP_PAGE_TITLE = "SWAP_PAGE_TITLE";
+export const ADD_USERNAME = "ADD_USERNAME";
 
-function swapPageTitle(pageTitle) {
+export function swapPageTitle(pageTitle) {
 
   return {
 
@@ -10,7 +10,7 @@ function swapPageTitle(pageTitle) {
   };
 }
 
-function addUsername(username) {
+export function addUsername(username) {
 
   return {
 
@@ -19,7 +19,7 @@ function addUsername(username) {
   };
 }
 
-function doFetchUsername() {
+export function doFetchUsername() {
 
   return (dispatch) => {
 
@@ -33,14 +33,3 @@ function doFetchUsername() {
     });
   };
 }
-
-module.exports = {
-
-  SWAP_PAGE_TITLE,
-  ADD_USERNAME,
-
-  swapPageTitle,
-  addUsername,
-
-  doFetchUsername
-};
