@@ -2,7 +2,7 @@ import electron from "electron";
 import express from "express";
 import createRoutes from "./routes.js";
 import { join } from "path";
-import pinboard from "pinboard";
+import pinboard from "./pinboard";
 
 const PTM_PORT = process.env.PTM_PORT || 8699;
 const PTM_AUTH_TOKEN = process.env.PTM_AUTH_TOKEN;

@@ -1,4 +1,4 @@
-import fromJS from "immutable";
+import { fromJS } from "immutable";
 import { searchTags } from "../../../src/tags.js";
 
 import {
@@ -37,9 +37,9 @@ function applyFilteredTagList(s) {
 
 const defaultState = fromJS({
 
-  tagList: fromJS({}),
-  filters: fromJS([]),
-  filteredTagList: fromJS({}),
+  tagList: {},
+  filters: [],
+  filteredTagList: {},
   loadingTags: false,
   error: false 
 });
