@@ -2,4 +2,7 @@
 
 @import "bourbon/bourbon";
 
-@import "components/tag-cloud.scss";
+@import "defaults";
+
+@import "components/tag-cloud";
+@import "components/ptm-header";

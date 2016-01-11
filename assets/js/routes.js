@@ -3,8 +3,10 @@ import jsnox from "jsnox";
 import { Route, IndexRoute } from "react-router";
 import App from "./containers/app.js";
 import TagCloud from "./components/tag-cloud.js";
+import BookmarkList from "./components/bookmark-list.js";
 
 const d = jsnox(React);
 
 export default  d(Route, { path: "/", component: App },
-    d(IndexRoute, { component: TagCloud }));
+        d(IndexRoute, { component: TagCloud }),
+        d(Route, { path: "bookmarks", component: BookmarkList }));

@@ -3,21 +3,22 @@ const React = require("react");
 const d = require("jsnox")(React);
 const shell = erequire("electron").shell;
 
-module.exports = React.createClass({
+import FilterBox from "./filter-box.js";
 
-  render: function() {
+module.exports = (props) => {
 
-    let tags = Object.keys(this.props.tags.get("filteredTagList").toJS());
-    let username = this.props.ui.get("username");
+  let tags = Object.keys(props.tags.get("filteredTagList").toJS());
+  let username = props.ui.get("username");
+  let { dispatch } = props;
 
-    return d("div.tag-cloud[data-component=tag-cloud]", {},
-        tags.map(t => {
+  return d("div.tag-cloud[data-component=tag-cloud]", {},
+      d(FilterBox, { dispatch }),
+      tags.map(t => {
 
-          return d("a.tag", {
+        return d("a.tag", {
 
-            id: t,
-            onClick: () => shell.openExternal(`https://pinboard.in/u:${username}/t:${t}/`)
-          }, d("p", {}, t));
-        }));
-  }
-});
+          id: t,
+          onClick: () => shell.openExternal(`https://pinboard.in/u:${username}/t:${t}/`)
+        }, d("p", {}, t));
+      }));
+};

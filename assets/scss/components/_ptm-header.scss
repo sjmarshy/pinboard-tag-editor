@@ -1,0 +1,11 @@
+.ptm-header {
+
+  > .links {
+
+    @include display(flex);
+    @include justify-content(space-between);
+
+    width: 125px;
+    padding: 15px;
+  }
+}
