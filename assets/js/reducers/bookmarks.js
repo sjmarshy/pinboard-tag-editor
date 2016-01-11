@@ -11,10 +11,10 @@ import { fromJS } from "immutable";
 
 const defaultState = fromJS({
 
-  bookmarks: fromJS([]),
-  bookmarkFilters: fromJS([]),
+  bookmarks: [],
+  bookmarkFilters: [],
   fetchingBookmarks: false,
-  filteredBookmarks: fromJS([]),
+  filteredBookmarks: [],
   error: ""
 });
 

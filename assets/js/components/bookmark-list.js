@@ -3,4 +3,9 @@ import jsnox from "jsnox";
 
 const d = jsnox(React);
 
-export default () => d("div.bookmark-list", {});
+export default ({ bookmarks }) => d("div.bookmark-list", {},
+    d("h2.title", {}, "Bookmarks"),
+    bookmarks.get("bookmarks").map(bm => {
+
+      return d("div.single-bookmark", {}, bm);
+    }));

@@ -24,10 +24,10 @@ const App = React.createClass({
 
     return d("div.app-container", {},
 
+        d("h1.page-title", {}, this.props.ui.get("pageTitle")),
+
         d(Header, { onShowTags: () => dispatch(pushPath("/")),
           onShowBookmarks: () => dispatch(pushPath("/bookmarks")) }),
-
-        d("h1.pagetitle", {}, this.props.ui.get("pageTitle")),
 
         React.Children.map(this.props.children,
           (c) => React.cloneElement(c, this.props)));
